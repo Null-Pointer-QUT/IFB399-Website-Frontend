@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    button {
+        @apply focus:outline-none;
+        @apply focus:ring-brand;
+        @apply focus:border-brand;
+    }
+
+    .btn-primary {
+        @apply w-full flex justify-center py-2 px-4 border border-transparent
+        rounded-md shadow-sm text-sm font-medium text-white bg-brand hover:bg-brand-light
+        focus:ring-2 focus:ring-offset-2
+    }
+
+    .btn-secondary {
+        @apply w-full flex justify-center py-2 px-4 border border-gray-300 border-transparent
+        rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-100
+        focus:ring-2 focus:ring-offset-2
+    }
+
+    .btn-warn {
+        @apply w-full flex justify-center py-2 px-4 border border-transparent
+        rounded-md shadow-sm text-sm font-medium text-white bg-red-400 hover:bg-red-300
+        focus:ring-2 focus:ring-offset-2 focus:ring-red-400
+    }
+
+    .btn-disable {
+        @apply w-full flex justify-center py-2 px-4 border border-transparent
+        rounded-md shadow-sm text-sm font-medium text-white bg-gray-500 cursor-not-allowed
+        focus:ring-2 focus:ring-offset-2
+    }
+
+    .input-primary {
+        @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400
+        focus:outline-none focus:ring-brand-light focus:ring-brand-light sm:text-sm
+    }
+    .most-line-1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .most-line-2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .most-line-3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .most-line-4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+}
+
+
+
