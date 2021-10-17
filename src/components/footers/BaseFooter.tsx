@@ -8,7 +8,7 @@ type propsType = {
 const navigation = [
   {
     name: 'GitHub',
-    href: 'https://github.com/ralph0813/ifb399',
+    href: 'https://github.com/Null-Pointer-QUT/IFB399-Website-Font-End',
     icon: (props: propsType) => (
       <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
         <path
