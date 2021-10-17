@@ -1,7 +1,7 @@
 {
   "name": "ifb399",
   "version": "0.1.1",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@rvxlab/tailwind-plugin-ios-full-height": "^1.0.0",
