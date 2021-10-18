@@ -1,3 +1,7 @@
+export const minioUrl = 'https://minio.juntao.life/ifb399/test'
+export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
+export const previewerUrl = 'http://preview.juntao.life/onlinePreview'
+
 export const adminUrl = {
   adminLogin: '/sp-admin/AccAdmin/doLogin',
   collectTopic: '/sp-portal/topic/manage/collectTopic',
@@ -37,11 +41,6 @@ export const commonUrl = {
   getMsgNum: '/sp-portal/notify/getNrOfUnreadMsg',
   getDigest: '/sp-portal/digest/getDigest',
 }
-
-export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
-export const previewerUrl = 'http://preview.juntao.life/onlinePreview'
-
-export const minioUrl = 'https://minio.juntao.life/ifb399/test'
 
 export const imgUrl = {
   largeLogo: minioUrl + '/np_full.png',
