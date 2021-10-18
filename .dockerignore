@@ -1,0 +1,8 @@
+node_modules
+build
+LICENSE
+README.md
+.idea
+.git
+.DS_Store
+.gitignore
