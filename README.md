@@ -5,10 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is a QUT Capstone Project.
 
 ## Steps to run this project:
-1. Install [Node](https://nodejs.org/en/download/) version 16.9.0 is recommend.
-2. Install [Yarn](https://yarnpkg.com/getting-started/install) latest version is recommend.
+1. Install [Node](https://nodejs.org/en/download/), version 16.9.0 is recommend.
+2. Install [Yarn](https://yarnpkg.com/getting-started/install), latest version is recommend.
 3. Run `yarn start` and Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-#### or 
+
+**or**
+
 Preview it on [https://ifb399.juntao.life](https://ifb399.juntao.life)
 
 ### This demo website is served on a HostKVM VPS which is located at **HongKong, China**.

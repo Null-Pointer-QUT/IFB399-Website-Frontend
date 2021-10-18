@@ -26,7 +26,7 @@ import { useNewMessage } from './hooks/useNewMessage'
 
 function App() {
   const [userInfo, userInfoDispatcher] = useReducer(userInfoReducer, userInitialState)
-  const [modelController, modelControllerDispatcher] = useReducer(modelReducer, modelInitialState)
+  const [modalController, modalControllerDispatcher] = useReducer(modelReducer, modelInitialState)
   const [message, messageDispatcher] = useReducer(messageReducer, messageInitialState)
 
   //update userinfo
@@ -35,7 +35,7 @@ function App() {
   useNewMessage(userInfo.userId, messageDispatcher)
 
   return (
-    <ModelContext.Provider value={{ state: modelController, dispatch: modelControllerDispatcher }}>
+    <ModelContext.Provider value={{ state: modalController, dispatch: modalControllerDispatcher }}>
       <Router>
         <Switch>
           <UserInfoContext.Provider value={{ state: userInfo, dispatch: userInfoDispatcher }}>
