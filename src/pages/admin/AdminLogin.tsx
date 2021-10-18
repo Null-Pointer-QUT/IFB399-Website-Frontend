@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import np from '../../static/logo/np_full.png'
-import bg from '../../static/bg_admin_login.jpg'
+import { imgUrl } from '../../service/url'
+
 // import { adminLogin } from '../../service/adminApi'
 import { inputEmptyConfig, ModalConfig, passwordIncorrectConfig } from '../../utils/modalConfig'
 import { userLogin } from '../../service/commonApi'
@@ -24,7 +24,7 @@ const AdminLogin = () => {
       <div className='flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
         <div className='mx-auto w-full max-w-sm lg:w-96'>
           <div>
-            <img className='h-12 w-auto' src={np} alt='logo' />
+            <img className='h-12 w-auto' src={imgUrl.smallLogo} alt='logo' />
             <h2 className='mt-6 text-3xl font-extrabold text-gray-900'>
               Welcome Admin
             </h2>
@@ -109,7 +109,7 @@ const AdminLogin = () => {
       <div className='hidden lg:block relative w-0 flex-1'>
         <img
           className='absolute inset-0 h-full w-full object-cover'
-          src={bg}
+          src={imgUrl.adminLoginBackground}
           alt='background'
         />
       </div>

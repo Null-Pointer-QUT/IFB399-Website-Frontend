@@ -19,7 +19,6 @@ import Articles from '../pages/admin/Articles'
 import Topics from '../pages/admin/Topics'
 import EditUpload from '../pages/upload/EditArticle'
 import Notification from '../pages/user/Notification'
-import OAuthLogin from '../pages/user/OAuthLogin'
 
 interface routeConfig {
   path: string
@@ -137,21 +136,6 @@ const routes: routeConfig[] = [
     path: '/notification',
     requireLogin: true,
     component: Notification,
-  },
-  {
-    path: '/oauth/google',
-    requireLogin: false,
-    component: OAuthLogin,
-  },
-  {
-    path: '/oauth/github',
-    requireLogin: false,
-    component: OAuthLogin,
-  },
-  {
-    path: '/oauth/facebook',
-    requireLogin: false,
-    component: OAuthLogin,
-  },
+  }
 ]
 export default routes

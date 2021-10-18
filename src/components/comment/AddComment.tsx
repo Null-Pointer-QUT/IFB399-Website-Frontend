@@ -1,9 +1,9 @@
-import defaultAviator from '../../static/aviator/blank_avatar.png'
 import * as React from 'react'
 import { addComment } from '../../service/commonApi'
 import { useState } from 'react'
 import { CommentInfo } from './CommentItem'
 import { useHistory } from 'react-router-dom'
+import { imgUrl } from '../../service/url'
 
 interface AddCommentProps {
   articleId: string
@@ -50,7 +50,7 @@ const AddComment = ({ articleId, addOneComment }: AddCommentProps) => {
     >
       <img
         className='h-10 w-10 rounded-full'
-        src={userInfo.avatar || defaultAviator}
+        src={userInfo.avatar || imgUrl.defaultAvatar}
         alt='#'
       />
       <input

@@ -2,8 +2,7 @@ import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
-import np_logo from '../../static/logo/np_logo.png'
-import np_logo_small from '../../static/logo/np_logo.png'
+import { imgUrl } from '../../service/url'
 
 import screenShoot from '../../static/screen.png'
 import BaseFooter from '../../components/footers/BaseFooter'
@@ -101,7 +100,7 @@ const Home = () => {
                           <span className='sr-only'>logo</span>
                           <img
                             className='h-8 w-auto sm:h-10'
-                            src={np_logo}
+                            src={imgUrl.largeLogo}
                             alt='logo'
                           />
                         </Link>
@@ -158,7 +157,7 @@ const Home = () => {
                         <div>
                           <img
                             className='h-8 w-auto'
-                            src={np_logo_small}
+                            src={imgUrl.smallLogo}
                             alt='#'
                           />
                         </div>

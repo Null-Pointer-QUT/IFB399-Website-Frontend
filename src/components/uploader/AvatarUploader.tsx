@@ -1,9 +1,9 @@
 import * as React from 'react'
-import defaultAvatar from '../../static/aviator/blank_avatar.png'
+import { SunIcon } from '@heroicons/react/outline'
 import useArrayBufferFileReader from '../../hooks/useArrayBufferFileReader'
 import { useEffect, useState } from 'react'
 import { mcPutOneObj } from '../../utils/mc'
-import { SunIcon } from '@heroicons/react/outline'
+import { imgUrl } from '../../service/url'
 
 interface AvatarUploaderProps<T> {
   avatarUrl: T,
@@ -43,7 +43,7 @@ const AvatarUploader = ({ avatarUrl, setAvatarUrl }: AvatarUploaderProps<string>
       {showLoading ? (
         <SunIcon className='relative rounded-full w-40 h-40 animate-spin text-gray-700' />
       ) : (
-        <img className='relative rounded-full w-40 h-40' src={avatarUrl ? avatarUrl : defaultAvatar} alt='#' />
+        <img className='relative rounded-full w-40 h-40' src={avatarUrl ? avatarUrl : imgUrl.defaultAvatar} alt='#' />
       )}
       <label
         htmlFor='user-photo'

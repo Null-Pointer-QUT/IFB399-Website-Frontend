@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import np from '../../static/logo/np_full.png'
-import img_404 from '../../static/image_404.jpg'
+import { imgUrl } from '../../service/url'
 
 const NotFound = () => {
   return (
@@ -12,7 +11,7 @@ const NotFound = () => {
             <div className="flex-shrink-0 pt-10 sm:pt-16">
               <Link to="/" className="inline-flex">
                 <span className="sr-only">Workflow</span>
-                <img className='h-12 w-auto' src={np} alt='logo' />
+                <img className='h-12 w-auto' src={imgUrl.smallLogo} alt='logo' />
               </Link>
             </div>
             <div className="flex-shrink-0 my-auto py-16 sm:py-32">
@@ -40,7 +39,7 @@ const NotFound = () => {
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="absolute inset-0 h-full w-full object-cover"
-          src={img_404}
+          src={imgUrl.image_404}
           alt="404"
         />
       </div>

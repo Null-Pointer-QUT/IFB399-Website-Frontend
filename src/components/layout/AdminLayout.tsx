@@ -6,9 +6,8 @@ import { HomeIcon, MenuAlt1Icon, ViewListIcon, XIcon } from '@heroicons/react/ou
 import { SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from '../../utils/utils'
 import BaseTitle from '../../components/admin/titleActions/BaseTitle'
-import largeLogo from '../../static/logo/np_full.png'
-import smallLogo from '../../static/logo/np_logo.png'
-import defaultAvatar from '../../static/aviator/blank_avatar.png'
+import { imgUrl } from '../../service/url'
+
 
 type Props = {
   children?: JSX.Element
@@ -77,7 +76,7 @@ const AdminLayout = ({ children }: Props) => {
               <div className='flex-shrink-0 flex items-center px-4'>
                 <img
                   className='h-10 w-auto'
-                  src={smallLogo}
+                  src={imgUrl.smallLogo}
                   alt='Null Pointer'
                 />
               </div>
@@ -120,7 +119,7 @@ const AdminLayout = ({ children }: Props) => {
           <div className='flex items-center flex-shrink-0 px-6'>
             <img
               className='hidden lg:block h-10 w-auto'
-              src={largeLogo}
+              src={imgUrl.largeLogo}
               alt='Null Pointer'
             />
           </div>
@@ -135,7 +134,7 @@ const AdminLayout = ({ children }: Props) => {
                     <span className='flex min-w-0 items-center justify-between space-x-3'>
                       <img
                         className='w-10 h-10 bg-gray-300 rounded-full flex-shrink-0'
-                        src={avatar || defaultAvatar}
+                        src={avatar || imgUrl.defaultAvatar}
                         alt='#'
                       />
                       <span className='flex-1 flex flex-col min-w-0'>
@@ -233,7 +232,7 @@ const AdminLayout = ({ children }: Props) => {
                     <span className='sr-only'>Open user menu</span>
                     <img
                       className='h-8 w-8 rounded-full'
-                      src={avatar || defaultAvatar}
+                      src={avatar || imgUrl.defaultAvatar}
                       alt=''
                     />
                   </Menu.Button>

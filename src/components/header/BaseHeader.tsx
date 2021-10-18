@@ -5,9 +5,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { classNames } from '../../utils/utils'
-import largeLogo from '../../static/logo/np_full.png'
-import smallLogo from '../../static/logo/np_logo.png'
-import defaultAvatar from '../../static/aviator/blank_avatar.png'
+import { imgUrl } from '../../service/url'
 import { userLogout } from '../../service/commonApi'
 import { useUserInfoContext } from '../../context/UserInfoContext'
 import { useMessageContext } from '../../context/MessageContext'
@@ -46,7 +44,7 @@ export default function BaseHeader() {
   const isLogin = userInfo.isLogin
   const username = userInfo.username
   const userEmail = userInfo.userEmail
-  const avatar = userInfo.userAvatar || defaultAvatar
+  const avatar = userInfo.userAvatar || imgUrl.defaultAvatar
 
   return (
     <Disclosure as='nav' className='bg-gray-800'>
@@ -63,12 +61,12 @@ export default function BaseHeader() {
                 >
                   <img
                     className='block lg:hidden h-8 w-auto'
-                    src={smallLogo}
+                    src={imgUrl.smallLogo}
                     alt='Null Pointer'
                   />
                   <img
                     className='hidden lg:block h-8 w-auto'
-                    src={largeLogo}
+                    src={imgUrl.largeLogo}
                     alt='Null Pointer'
                   />
                 </button>

@@ -39,5 +39,15 @@ export const commonUrl = {
 }
 
 export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
-export const renderUrl = '/api/sp-portal/oauth/render/'
 export const previewerUrl = 'http://preview.juntao.life/onlinePreview'
+
+export const minioUrl = 'https://minio.juntao.life/ifb399/test'
+
+export const imgUrl = {
+  largeLogo: minioUrl + '/np_full.png',
+  smallLogo: minioUrl + '/np_logo.png',
+  defaultAvatar: minioUrl + '/blank_avatar.png',
+  bgLogin: minioUrl + '/bg_login.jpg',
+  adminLoginBackground: minioUrl + '/bg_admin_login.jpg',
+  image_404: minioUrl + '/image_404',
+}
