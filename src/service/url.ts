@@ -1,6 +1,12 @@
-export const minioUrl = 'https://minio.juntao.life/ifb399/test'
+//// for demo server
 export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
 export const previewerUrl = 'http://preview.juntao.life/onlinePreview'
+
+//// for docker compose
+// export const wsMsgUrl = 'wss://sp-gateway:8080/ws/sp-portal/notification'
+// export const previewerUrl = 'http://fileview:8012/onlinePreview'
+
+export const minioUrl = 'https://minio.juntao.life/ifb399/test'
 
 export const adminUrl = {
   adminLogin: '/sp-admin/AccAdmin/doLogin',

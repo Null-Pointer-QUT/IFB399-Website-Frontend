@@ -1,0 +1,82 @@
+version: '2'
+services:
+  sp-mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: veryStrongPassword!!
+    restart: always
+    container_name: sp-mysql
+    image: runtianzhang/sp-mysql:5.7
+
+  sp-nacos:
+    image: runtianzhang/sp-nacos:1.4.2
+    restart: always
+    ports:
+      - "8848:8848"
+    container_name: sp-nacos
+    hostname: sp-nacos
+    depends_on:
+      - sp-mysql
+    environment:
+      MYSQL_SERVICE_PASSWORD: veryStrongPassword!!
+      MYSQL_SERVICE_USER: root
+
+  sp-redis:
+    image: redis:6.0
+    ports:
+      - "6379:6379"
+    restart: always
+    container_name: sp-redis
+    hostname: sp-redis
+
+  sp-mongo:
+    image: runtianzhang/sp-mongo:4.2
+    restart: always
+    container_name: sp-mongo
+    hostname: sp-mongo
+
+  elasticsearch:
+    image: runtianzhang/elasticsearch:7.9.3-np
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: always
+    container_name: elasticsearch
+    hostname: elasticsearch
+
+  sp-portal:
+    image: runtianzhang/sp-portal:latest
+    restart: always
+    container_name: sp-portal
+    hostname: sp-portal
+    depends_on:
+      - sp-mysql
+      - sp-mongo
+      - sp-redis
+      - sp-nacos
+      - elasticsearch
+
+  sp-gateway:
+    image: runtianzhang/sp-gateway:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    container_name: sp-gateway
+    hostname: sp-gateway
+    depends_on:
+      - sp-mysql
+      - sp-portal
+
+  fileview:
+    image: keking/kkfileview:latest
+    ports:
+      - "8012:8012"
+    container_name: fileview
+    hostname: fileview
+
+  frontend:
+      image: ralphlu/null-pointer-frontend:latest
+      ports:
+        - "8081:80"
+      container_name: frontend
+      depends_on:
+      - sp-gateway
