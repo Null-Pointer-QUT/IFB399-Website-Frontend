@@ -13,17 +13,19 @@ Preview it on [https://ifb399.juntao.life](https://ifb399.juntao.life)
 ## There are 3 ways to run this project:
 
 ### Using Docker Compose（Recommend）：
-1. Install `docker-compose` follow this guide: [Install Docker Compose](https://docs.docker.com/compose/install/).
-2. (Optional) If you are familiar with `docker-compose`, you can modify the database password, port, etc.
+1. Install `docker` follow this guide: [Install Docker](https://docs.docker.com/engine/install/)  
+2. Install `docker-compose` follow this guide: [Install Docker Compose](https://docs.docker.com/compose/install/).
+3. (Optional) If you are familiar with `docker-compose`, you can modify the database password, port, etc.
    in `docker-compose.yml`.
-3. Run `docker-compose up` and wait to be ready. _This may take 20 minutes of more, depends on your cpu performance and
+4. Run `docker-compose up` and wait to be ready. _This may take 20 minutes of more, depends on your cpu performance and
    network connection. You can add `-d` option to let it run in the background._
-4. Open [http://localhost:8081](http://localhost) to view it in the browser.
+5. Open [http://localhost:8081](http://localhost) to view it in the browser.
 
 ### Using Docker：
-1. Run `docker build -t null-pointer-frontend . && docker run -p 8081:80 --name frontend null-pointer-frontend`. _This
+1. Install `docker` follow this guide: [Install Docker](https://docs.docker.com/engine/install/)
+2. Run `docker build -t null-pointer-frontend . && docker run -p 8081:80 --name frontend null-pointer-frontend`. _This
    may take 20 minutes of more, depends on your cpu performance and network connection._
-2. Open [http://localhost:8081](http://localhost) to view it in the browser.
+3. Open [http://localhost:8081](http://localhost) to view it in the browser.
 
 ### Using local environment：
 1. Install [Node](https://nodejs.org/en/download/), version 16.9.0 is recommend.
