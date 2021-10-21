@@ -70,6 +70,7 @@ services:
     image: keking/kkfileview:latest
     ports:
       - "8012:8012"
+    restart: unless-stopped
     container_name: fileview
     hostname: fileview
 
@@ -77,6 +78,7 @@ services:
       image: ralphlu/null-pointer-frontend:latest
       ports:
         - "8081:80"
+      restart: unless-stopped
       container_name: frontend
       depends_on:
       - sp-gateway
