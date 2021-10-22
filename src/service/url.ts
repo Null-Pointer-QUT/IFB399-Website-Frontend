@@ -1,10 +1,14 @@
-//// for demo server
-export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
+// for demo server
 export const previewerUrl = 'http://preview.juntao.life/onlinePreview'
+export const wsMsgUrl = 'wss://ifb399.juntao.life:443/ws/sp-portal/notification'
 
-//// for docker compose
-// export const wsMsgUrl = 'wss://sp-gateway:8080/ws/sp-portal/notification'
-// export const previewerUrl = 'http://fileview:8012/onlinePreview'
+// // for docker compose
+// export const wsMsgUrl = 'wss://[your_computer_ip]:8081/ws/sp-portal/notification'
+// export const previewerUrl = 'http://[your_computer_ip]:8012/onlinePreview'
+
+// // for docker compose
+// export const wsMsgUrl = 'wss://localhost:8081/ws/sp-portal/notification'
+// export const previewerUrl = 'http://localhost:8012/onlinePreview'
 
 export const minioUrl = 'https://minio.juntao.life/ifb399/test'
 

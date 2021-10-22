@@ -1,15 +1,24 @@
 version: '2'
 services:
+  elasticsearch:
+    image: runtianzhang/elasticsearch:7.9.3-np
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: unless-stopped
+    container_name: elasticsearch
+    hostname: elasticsearch
+
   sp-mysql:
     environment:
-      MYSQL_ROOT_PASSWORD: veryStrongPassword!!
-    restart: always
+      MYSQL_ROOT_PASSWORD: 813929MySQL
+    restart: unless-stopped
     container_name: sp-mysql
     image: runtianzhang/sp-mysql:5.7
 
   sp-nacos:
     image: runtianzhang/sp-nacos:1.4.2
-    restart: always
+    restart: unless-stopped
     ports:
       - "8848:8848"
     container_name: sp-nacos
@@ -17,35 +26,26 @@ services:
     depends_on:
       - sp-mysql
     environment:
-      MYSQL_SERVICE_PASSWORD: veryStrongPassword!!
+      MYSQL_SERVICE_PASSWORD: 813929MySQL
       MYSQL_SERVICE_USER: root
 
   sp-redis:
     image: redis:6.0
     ports:
       - "6379:6379"
-    restart: always
+    restart: unless-stopped
     container_name: sp-redis
     hostname: sp-redis
 
   sp-mongo:
     image: runtianzhang/sp-mongo:4.2
-    restart: always
+    restart: unless-stopped
     container_name: sp-mongo
     hostname: sp-mongo
 
-  elasticsearch:
-    image: runtianzhang/elasticsearch:7.9.3-np
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    restart: always
-    container_name: elasticsearch
-    hostname: elasticsearch
-
   sp-portal:
-    image: runtianzhang/sp-portal:latest
-    restart: always
+    image: runtianzhang/sp-portal:0.0.1-slim
+    restart: unless-stopped
     container_name: sp-portal
     hostname: sp-portal
     depends_on:
@@ -56,10 +56,10 @@ services:
       - elasticsearch
 
   sp-gateway:
-    image: runtianzhang/sp-gateway:latest
+    image: runtianzhang/sp-gateway:0.0.1-slim
     ports:
       - "8080:8080"
-    restart: always
+    restart: unless-stopped
     container_name: sp-gateway
     hostname: sp-gateway
     depends_on:
@@ -75,10 +75,10 @@ services:
     hostname: fileview
 
   frontend:
-      image: ralphlu/null-pointer-frontend:latest
-      ports:
-        - "8081:80"
-      restart: unless-stopped
-      container_name: frontend
-      depends_on:
+    image: ralphlu/null-pointer-frontend:local
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+    container_name: frontend
+    depends_on:
       - sp-gateway
