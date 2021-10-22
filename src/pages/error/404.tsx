@@ -10,8 +10,7 @@ const NotFound = () => {
           <div className="flex-grow mx-auto max-w-7xl w-full flex flex-col px-4 sm:px-6 lg:px-8">
             <div className="flex-shrink-0 pt-10 sm:pt-16">
               <Link to="/" className="inline-flex">
-                <span className="sr-only">Workflow</span>
-                <img className='h-12 w-auto' src={imgUrl.smallLogo} alt='logo' />
+                <img className='h-12 w-auto' src={imgUrl.largeLogo} alt='logo' />
               </Link>
             </div>
             <div className="flex-shrink-0 my-auto py-16 sm:py-32">
@@ -27,9 +26,9 @@ const NotFound = () => {
           </div>
         </main>
         <footer className="flex-shrink-0 bg-gray-50">
-          <div className="mx-auto max-w-7xl w-full px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl w-full px-4 py-8 sm:px-6 lg:px-8">
             <nav className="flex space-x-4">
-              <Link to="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
+              <Link to="/feedback" className="text-sm font-medium text-gray-500 hover:text-gray-600">
                 Contact Support
               </Link>
             </nav>
