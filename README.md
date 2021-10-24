@@ -39,6 +39,9 @@ of **5G free memory** and at least 2 core CPUs are needed to start the server._
 4. Run `npm start`. _This command starts a dev server. Usually, this takes less than 3 minutes._
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Guide
+[Here](https://github.com/Null-Pointer-QUT/IFB399-Website-Frontend/blob/ecad7385dc0e847962ecf02f68be464f0bb8e7ea/doc/IFB399%20Capstone%20Project%20User%20guide.pdf) is user guide, and [here](https://github.com/Null-Pointer-QUT/IFB399-Website-Frontend/blob/ecad7385dc0e847962ecf02f68be464f0bb8e7ea/doc/Testing.pdf) is testing.
+
 ### This demo website is served on a HostKVM VPS which is located at **HongKong, China**.
 
 #### Please do not upload large files, _server disk space is precious_.
