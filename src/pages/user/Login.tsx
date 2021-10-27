@@ -17,7 +17,7 @@ export default function Login() {
   let history = useHistory()
   const location = useLocation()
   const params = new URLSearchParams(location.search)
-  const redirectPath = params.get('redirect')
+  const redirectPath = params.get('redirect') || '/'
   const [username, setUsername] = useState<null | string>(null)
   const [password, setPassword] = useState<null | string>(null)
   const { dispatch: UserDispatch } = useUserInfoContext()
@@ -27,7 +27,7 @@ export default function Login() {
       <div className='flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
         <div className='mx-auto w-full max-w-sm lg:w-96'>
           <div>
-            <img className='h-12 w-auto' src={imgUrl.smallLogo} alt='logo' />
+            <img className='h-12 w-auto mb-5' src={imgUrl.largeLogo} alt='logo' />
             <h2 className='mt-6 text-3xl font-extrabold text-gray-900'>
               Login to your account
             </h2>
@@ -123,7 +123,7 @@ export default function Login() {
                         let { success, data } = await userLogin(username, password)
                         if (success) {
                           UserDispatch({ type: 'UPDATE_WITH_FETCHED_DATA', data })
-                          if (redirectPath) {
+                          if (redirectPath && redirectPath !== 'null') {
                             history.push(redirectPath)
                           } else if (history.length > 2) {
                             history.goBack()

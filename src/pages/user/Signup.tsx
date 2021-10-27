@@ -24,8 +24,8 @@ const Signup = () => {
 
   const location = useLocation()
   const params = new URLSearchParams(location.search)
-  const redirectPath = params.get('redirect')
-
+  const redirectPath = params.get('redirect') || '/'
+  console.log(redirectPath)
   let history = useHistory()
 
   return (
@@ -33,7 +33,7 @@ const Signup = () => {
       <div className='flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
         <div className='mx-auto w-full max-w-sm lg:w-96'>
           <div>
-            <img className='h-12 w-auto' src={imgUrl.smallLogo} alt='Workflow' />
+            <img className='h-12 w-auto mb-5' src={imgUrl.largeLogo} alt='logo' />
             <h2 className='mt-2 text-3xl font-extrabold text-gray-900'>
               Create your account
             </h2>
