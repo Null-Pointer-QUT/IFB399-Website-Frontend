@@ -18,6 +18,9 @@ function RouterGuard() {
   }
 
   if (currentRoute) {
+    if (currentRoute.path === '/') {
+      return <Redirect to='/explore' />
+    }
     if (currentRoute.path.indexOf('admin') !== -1 && localStorage.getItem('roleId') !== '1' && pathname.indexOf('login') === -1) {
       return <Redirect to='/admin/login' />
     } else if (currentRoute.requireLogin && isLogin !== 'true') {

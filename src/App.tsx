@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useReducer } from 'react'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import RouterGuard from './router/RouterGuard'
 import ModalPortal from './components/portals/ModalPortal'
@@ -22,6 +22,7 @@ import {
   initialState as messageInitialState,
 } from './context/MessageContext'
 import { useNewMessage } from './hooks/useNewMessage'
+import BaseLayout from './components/layout/BaseLayout'
 
 
 function App() {
@@ -36,15 +37,22 @@ function App() {
 
   return (
     <ModelContext.Provider value={{ state: modalController, dispatch: modalControllerDispatcher }}>
-      <Router>
-        <Switch>
-          <UserInfoContext.Provider value={{ state: userInfo, dispatch: userInfoDispatcher }}>
-            <MessageContext.Provider value={{ state: message, dispatch: messageDispatcher }}>
-              <RouterGuard />
-            </MessageContext.Provider>
-          </UserInfoContext.Provider>
-        </Switch>
-      </Router>
+      <UserInfoContext.Provider value={{ state: userInfo, dispatch: userInfoDispatcher }}>
+        <MessageContext.Provider value={{ state: message, dispatch: messageDispatcher }}>
+          <Router>
+            <Switch>
+              <Route path='/explore' >
+                <BaseLayout>
+                  <RouterGuard />
+                </BaseLayout>
+              </Route>
+              <Route >
+                <RouterGuard />
+              </Route>
+            </Switch>
+          </Router>
+        </MessageContext.Provider>
+      </UserInfoContext.Provider>
       <ModalPortal />
     </ModelContext.Provider>
   )

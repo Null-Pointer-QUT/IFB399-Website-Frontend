@@ -105,7 +105,7 @@ export default function Login() {
 
                   <div className='text-sm'>
                     <Link
-                      to='#'
+                      to='/explore/feedback'
                       className='font-medium text-brand hover:text-brand-light'
                     >
                       Forgot your password?

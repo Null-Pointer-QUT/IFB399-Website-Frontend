@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 
-import BaseLayout from '../../components/layout/BaseLayout'
 import UseGetUserInfo from '../../hooks/useGetUserInfo'
 import { changeUserInfo, userLogout } from '../../service/commonApi'
 import AvatarUploader from '../../components/uploader/AvatarUploader'
@@ -52,7 +51,6 @@ const Profile = () => {
   }, [avatarUrl, userInfo])
 
   return (
-    <BaseLayout>
       <div className='divide-y divide-gray-200 lg:col-span-9'>
         <div className='py-6 px-4 sm:p-6 lg:pb-8'>
           <div>
@@ -222,7 +220,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </BaseLayout>
   )
 }
 

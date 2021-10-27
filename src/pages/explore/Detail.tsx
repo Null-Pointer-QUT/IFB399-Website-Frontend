@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import { useHistory, useLocation } from 'react-router-dom'
 
 import BaseActionBar from '../../components/BaseActionBar/BaseActionBar'
-import BaseLayout from '../../components/layout/BaseLayout'
 import YoutubeEmbed from '../../components/YoutubeEmbed/YoutubeEmbed'
 import AttachmentsSection from '../../components/AttachmentsSection/AttachmentsSection'
 import BaseUserInfoBar from '../../components/BaseUserInfoBar/BaseUserInfoBar'
@@ -45,7 +44,7 @@ const Detail = () => {
   }
 
   return (
-    <BaseLayout>
+    <div>
       {res && !loading && !err
         ? (
           <div className='bg-white p-6 space-y-4 md:space-y-6'>
@@ -85,7 +84,7 @@ const Detail = () => {
         ) : (
           <BaseLoading />
         )}
-    </BaseLayout>
+    </div>
   )
 }
 

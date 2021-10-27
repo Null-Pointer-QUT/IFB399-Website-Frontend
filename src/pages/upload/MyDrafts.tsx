@@ -1,5 +1,4 @@
 import * as React from 'react'
-import BaseLayout from '../../components/layout/BaseLayout'
 import SectionTitle from '../../components/header/SectionTitle'
 import Pagination from '../../components/Pagination/Pagination'
 import EmptyArticle from '../../components/empty/EmptyArticle'
@@ -16,8 +15,6 @@ const MyDrafts = () => {
   const { list, currentPage, goToNextPage, goToPreviousPage, goToPage } = usePagination(articleList, pageSize)
 
   return (
-    <BaseLayout>
-
       <div className='pt-2'>
         <SectionTitle title='My Drafts' description="Articles you haven't published." />
         {!loading ? (
@@ -48,7 +45,6 @@ const MyDrafts = () => {
           <BaseLoading />
         )}
       </div>
-    </BaseLayout>
   )
 }
 

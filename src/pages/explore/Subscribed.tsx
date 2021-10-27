@@ -1,32 +1,39 @@
 import * as React from 'react'
+import { useMemo } from 'react'
 import SectionTitle from '../../components/header/SectionTitle'
-import ExploreHeader from '../../components/header/ExploreHeader'
 import SubscriptionItem, { Topic } from '../../components/SubscriptionSection/SubscriptionItem'
-import EmptySubscription from '../../components/empty/EmptySubscription'
 import BaseLoading from '../../components/loadings/BaseLoading'
 import UsePublicTopicList from '../../hooks/useGetPublicTopicList'
+import EmptySubscribed from '../../components/empty/EmptySubscribed'
 
-const Subscription = () => {
+const Subscribed = () => {
   const [topicList, loading] = UsePublicTopicList()
+  const likedList: Topic[] = useMemo(() => {
+    if (topicList) {
+      return topicList.filter((item: Topic) => item.isSubscribed)
+    } else {
+      return []
+    }
+  }, [topicList])
+
   return (
-    <div>
-      <ExploreHeader currentTab='Subscription' />
+    <div className='mt-2'>
       <SectionTitle
-        title='Subscription'
-        description='Browse all popular tags.'
+        title='Subscribed'
+        description='Topics you subscribed.'
       />
       <div className='px-2'>
         {!loading ? (
           <>
-            {(topicList?.length !== 0) ? (
+            {(likedList?.length !== 0) ? (
               <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 pb-3'>
-                {topicList && topicList.map((topic: Topic) => (
+                {likedList && likedList.map((topic: Topic) => (
                   <SubscriptionItem topic={topic} key={topic.topicId} />
                 ))}
               </div>
             ) : (
               <div className='bg-white py-36 rounded m-2'>
-                <EmptySubscription />
+                <EmptySubscribed />
               </div>
             )}
           </>
@@ -37,4 +44,4 @@ const Subscription = () => {
     </div>
   )
 }
-export default Subscription
+export default Subscribed

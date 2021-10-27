@@ -7,7 +7,6 @@ import MarkdownIt from 'markdown-it'
 import MdEditor from 'react-markdown-editor-lite'
 import 'react-markdown-editor-lite/lib/index.css'
 
-import BaseLayout from '../../components/layout/BaseLayout'
 import { uploadArticle } from '../../service/commonApi'
 import SingleOneObjUploader from '../../components/uploader/SingleOneObjUploader'
 import {
@@ -78,7 +77,6 @@ const Upload = () => {
   }
 
   return (
-    <BaseLayout>
       <div className='space-y-2 m-2 '>
         <div className='min-h-24 max-h-64 flex'>
           <SingleOneObjUploader
@@ -208,7 +206,6 @@ const Upload = () => {
           </button>
         </div>
       </div>
-    </BaseLayout>
   )
 }
 export default Upload

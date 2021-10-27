@@ -25,7 +25,6 @@ const Signup = () => {
   const location = useLocation()
   const params = new URLSearchParams(location.search)
   const redirectPath = params.get('redirect') || '/'
-  console.log(redirectPath)
   let history = useHistory()
 
   return (

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import BaseLayout from '../../components/layout/BaseLayout'
 import SectionTitle from '../../components/header/SectionTitle'
 import ExploreHeader from '../../components/header/ExploreHeader'
 import EmptyDigest from '../../components/empty/EmptyDigest'
@@ -13,8 +12,7 @@ const Digest = () => {
   const [digestList, loading] = UseGetDigest()
   return (
     <div>
-      <BaseLayout>
-        <div className='flex flex-col'>
+         <div className='flex flex-col'>
           <ExploreHeader currentTab='Digest' />
           <SectionTitle
             title='Digest'
@@ -57,7 +55,6 @@ const Digest = () => {
           {/*  ))}*/}
           {/*</div>*/}
         </div>
-      </BaseLayout>
     </div>
   )
 }

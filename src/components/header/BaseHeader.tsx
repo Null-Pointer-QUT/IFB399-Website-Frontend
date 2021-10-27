@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
@@ -22,7 +22,9 @@ export default function BaseHeader() {
   const history = useHistory()
   const location = useLocation()
   const currentPath = location.pathname
-  navigation[1].current = currentPath === '/' || currentPath.indexOf('/explore') !== -1
+  useEffect(() => {
+    navigation[1].current = currentPath === '/' || currentPath.indexOf('/explore') !== -1
+  }, [currentPath])
 
   const handleLogout = async () => {
     await userLogout()
@@ -37,7 +39,7 @@ export default function BaseHeader() {
     }
   }
   const handleOpenNotification = () => {
-    goTo('/notification')
+    goTo('/explore/notification')
     messageDispatch({ type: 'READ_MESSAGE' })
   }
 
@@ -181,7 +183,7 @@ export default function BaseHeader() {
                                       'w-full text-left block px-4 py-2 text-sm text-gray-700',
                                     )}
                                     onClick={() => {
-                                      goTo('/my_profile')
+                                      goTo('/explore/my_profile')
                                     }}
                                   >
                                     Profile
@@ -284,7 +286,7 @@ export default function BaseHeader() {
                   <button
                     className='w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700'
                     onClick={() => {
-                      goTo('/my_profile')
+                      goTo('/explore/my_profile')
                     }}
                   >
                     Your Profile

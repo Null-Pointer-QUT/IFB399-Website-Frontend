@@ -1,5 +1,4 @@
 import NotificationTab from '../../components/tabs/NotificationTab'
-import BaseLayout from '../../components/layout/BaseLayout'
 import NotificationTable from '../../components/tables/NotificationTable/NotificationTable'
 import UseGetAllMsg from '../../hooks/useGetAllMsg'
 import { useState } from 'react'
@@ -36,7 +35,6 @@ export default function Notification() {
       throw new Error()
   }
   return (
-    <BaseLayout>
       <div className='bg-white px-3'>
         <div>
           <div className='text-gray-700 text-2xl font-bold text-center py-3 sm:pb-0'>Notification</div>
@@ -56,6 +54,5 @@ export default function Notification() {
           <BaseLoading/>
         )}
       </div>
-    </BaseLayout>
   )
 }

@@ -19,13 +19,13 @@ import Articles from '../pages/admin/Articles'
 import Topics from '../pages/admin/Topics'
 import EditUpload from '../pages/upload/EditArticle'
 import Notification from '../pages/user/Notification'
+import Subscribed from '../pages/explore/Subscribed'
 
 interface routeConfig {
   path: string
   requireLogin: boolean
   component: any
 }
-
 
 const routes: routeConfig[] = [
   {
@@ -68,6 +68,11 @@ const routes: routeConfig[] = [
     component: Subscription,
   },
   {
+    path: '/explore/subscribed',
+    requireLogin: true,
+    component: Subscribed,
+  },
+  {
     path: '/explore/digest',
     requireLogin: true,
     component: Digest,
@@ -78,12 +83,12 @@ const routes: routeConfig[] = [
     component: Search,
   },
   {
-    path: '/upload',
+    path: '/explore/upload',
     requireLogin: true,
     component: Upload,
   },
   {
-    path: '/admin',
+    path: '/explore/admin',
     requireLogin: true,
     component: Admin,
   },
@@ -93,29 +98,39 @@ const routes: routeConfig[] = [
     component: AdminLogin,
   },
   {
-    path: '/my_profile',
+    path: '/explore/my_profile',
     requireLogin: true,
     component: Profile,
   },
   {
-    path: '/liked',
+    path: '/explore/liked',
     requireLogin: true,
     component: Liked,
   },
   {
-    path: '/feedback',
+    path: '/explore/feedback',
     requireLogin: false,
     component: FeedBack,
   },
   {
-    path: '/my_articles',
+    path: '/explore/my_articles',
     requireLogin: true,
     component: MyArticle,
   },
   {
-    path: '/my_drafts',
+    path: '/explore/my_drafts',
     requireLogin: true,
     component: MyDrafts,
+  },
+  {
+    path: '/explore/edit_article',
+    requireLogin: true,
+    component: EditUpload,
+  },
+  {
+    path: '/explore/notification',
+    requireLogin: true,
+    component: Notification,
   },
   {
     path: '/admin/articles',
@@ -127,15 +142,5 @@ const routes: routeConfig[] = [
     requireLogin: true,
     component: Topics,
   },
-  {
-    path: '/edit_article',
-    requireLogin: true,
-    component: EditUpload,
-  },
-  {
-    path: '/notification',
-    requireLogin: true,
-    component: Notification,
-  }
 ]
 export default routes
