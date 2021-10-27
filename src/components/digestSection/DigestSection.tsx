@@ -17,9 +17,11 @@ export default function DigestSection(params: { digestList: any[] }) {
                 className='font-medium tracking-wide text-2xl text-gray-700 w-full py-2 space-y-2'>
                 {topicItem.topicName}
               </div>
-              {topicItem?.articles && topicItem?.articles.map((article: any) => (
-                <BaseListItem item={article} key={article.articleId} />
-              ))}
+              <div className='space-y-2'>
+                {topicItem?.articles && topicItem?.articles.map((article: any) => (
+                    <BaseListItem item={article} key={article.articleId} />
+                ))}
+              </div>
               {topicItem?.articles.length === 0 && (
                 <div className='py-5 border rounded-lg'>
                   <EmptyDigestArticle />

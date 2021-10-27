@@ -24,8 +24,9 @@ export default function NotificationTable(params: { msgList: any[] }) {
   }
 
   const handleClickItem = (id: string) => {
-    history.push(`explore/detail?id=${id}`)
+    history.push(`/explore/detail?id=${id}`)
   }
+
   const getMessage = (messageItem: any) => {
     if (messageItem.messageType === 'THUMB_UP') {
       return `${messageItem.content.username} liked your article ${messageItem.content.title}.`
@@ -56,7 +57,6 @@ export default function NotificationTable(params: { msgList: any[] }) {
                         setCheckList(new Array(pageSize).fill(false))
                       } else {
                         setCheckList(new Array(pageSize).fill(true))
-
                       }
                     }} />
                 </th>
