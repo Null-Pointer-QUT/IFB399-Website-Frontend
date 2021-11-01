@@ -120,7 +120,7 @@ const EditListItem = ({ item }: { item: ItemProps }) => {
           <button
             className='btn-secondary py-0.5 flex w-16 md:w-24'
             onClick={()=>{
-              history.push(`/edit_article?id=${articleId}`)
+              history.push(`/explore/edit_article?id=${articleId}`)
             }}
           >
             Edit
