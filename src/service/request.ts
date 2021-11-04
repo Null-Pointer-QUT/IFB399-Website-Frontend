@@ -7,10 +7,8 @@ const instance = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
-// 添加请求拦截器
 instance.interceptors.request.use(
   (config) => {
-    // 给请求加上请求头
     if (localStorage.isLogin) {
       config.headers.satoken = localStorage.tokenValue
     }
@@ -20,7 +18,7 @@ instance.interceptors.request.use(
     return Promise.reject(error)
   },
 )
-// response拦截器，返回状态判断(添加响应拦截器)
+
 instance.interceptors.response.use(
   (res) => {
     if (res.data?.code !== 200) {

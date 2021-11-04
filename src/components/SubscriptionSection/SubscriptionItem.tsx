@@ -54,7 +54,7 @@ export default function SubscriptionItem({ topic }: { topic: Topic }) {
               className='relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500'
               onClick={() => {
                 history.push({
-                  pathname: '/',
+                  pathname: '/explore',
                   search: '?' + new URLSearchParams({ topic: topic.topicName }).toString(),
                 })
               }}

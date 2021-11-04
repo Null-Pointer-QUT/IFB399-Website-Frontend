@@ -20,9 +20,9 @@ const CommentItem = ({ commentInfo }: { commentInfo: CommentInfo }) => {
     <div className='flex items-start my-3 space-x-3'>
       <img className='h-10 w-10 rounded-full' src={commentInfo.user.avatar} alt='#' />
       <div className='bg-gray-100 rounded-lg w-full space-y-1 py-2 px-3'>
-        <div className='flex items-center justify-between'>
-          <div className='text-black text-sm'>{commentInfo.user.name} {isMyComment && '(me)'}:</div>
-          <div className='text-gray-600 text-sm'>{`${timeFrom} ${unit} ago`} </div>
+        <div className='flex items-center justify-between whitespace-nowrap'>
+          <div className='text-black text-sm overflow-hidden overflow-ellipsis w-28 sm:w-full'>{commentInfo.user.name} {isMyComment && '(me)'}:</div>
+          <div className='text-gray-600 text-sm '>{`${timeFrom} ${unit} ago`} </div>
         </div>
         <div className='text-gray-800'>{commentInfo.comment}</div>
       </div>
